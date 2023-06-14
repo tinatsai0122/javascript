@@ -2,55 +2,52 @@
 
 
 let stock = {
-    coke:10,
-    fanta:5,
-    coffee:2
+    coke:5,
+    fanta:3,
+    coffee:0
 };
 
-let drinkUser = parseInt(prompt("Please type the number: \n -(1) Coca-cola \n -(2) Fanta \n -(3) Coffee  "))
+let validInput = false;
+let drinkUser;
 
-/*
-while (drinkUser > 4 || drainkUser <1){
-    console.log("Invalid Input");
-    drinkUser = parseInt(prompt("Please type the number: \n -(1) Coca-cola \n -(2) Fanta \n -(3) Coffee -(4)Nothing "));
-}
-*/
-while (true){
+while(!validInput){
+    drinkUser = parseInt(prompt("Please type the number: \n -(1) Coca-cola \n -(2) Fanta \n -(3) Coffee  "))
+
+
     switch (drinkUser){
         case 1:
             if (stock.coke > 0){
                 console.log("Here you are the Coke!");
                 stock.coke--;
+                validInput = true;
             }
-            else { 
+            else{ 
                 console.log("The Coke is out of Stock!")
-                drinkUser = parseInt(prompt(`Please type the number: \n -(1) Coca-cola (stock = ${stock.coke}) \n -(2) Fanta (stock = ${stock.fanta})\n -(3) Coffee (stock = ${stock.coffee})`))
             }
             break;
         case 2:
             if (stock.fanta > 0){
                 console.log("Here you are the Fanta!");
                 stock.fanta--;
+                validInput=true;
             }
-            else { 
+            else{ 
                 console.log("The Fanta is out of Stock!");
-                drinkUser = parseInt(prompt(`Please type the number: \n -(1) Coca-cola (stock = ${stock.coke}) \n -(2) Fanta (stock = ${stock.fanta})\n -(3) Coffee (stock = ${stock.coffee})`))
             }
             break;
         case 3:
             if (stock.coffee > 0){
                 console.log("Here you are the Coffee!");
                 stock.coffee--;
+                validInput=true;
             }
             else { 
                 console.log("The Coffee is out of Stock!");
-                drinkUser = parseInt(prompt(`Please type the number: \n -(1) Coca-cola (stock = ${stock.coke}) \n -(2) Fanta (stock = ${stock.fanta})\n -(3) Coffee (stock = ${stock.coffee})`))
-            break;
             }
+            break;
         default:
             console.log(`The Value: ${drinkUser} is not known.`)
-            drinkUser = parseInt(prompt("Please type the number: \n -(1) Coca-cola \n -(2) Fanta \n -(3) Coffee  "))
-            break;
     }
 }
+
 
