@@ -1,44 +1,75 @@
+//#region Functions
 
-//#region splice
-let tab = [4,5,6,7,8,9];
+//1. declaration
+// function addition(number1, number2){
+//     let result = number1 + number2
+//     return result
+// }
 
-tab.splice(3,7,0,1);
-console.log(tab) //Permet d'ajouter les element 1,2,... a partir de l'emplacement a, en supprimant b elements.
-console.log(tab.valueOf())
+// //2. Calling
+// let nb1 = 256489
+// let nb2 = 32018
 
-tab.splice(2,1,7,7,7);
-console.log(tab.valueOf())
+// let result = addition(nb1, nb2)
+
+// console.log("---------------------")
+// console.log(`The result is ${result}`)
+// console.log("---------------------")
+
+//#endregion
+
+//#region Procedure
+
+// let player1 = {
+//     name: "John",
+//     age: 18
+// }
+
+// function giveAge(person){
+//     console.log(`The age of ${person.name} is ${person.age}`)
+// }
+
+// console.log(giveAge(player1))
 
 //#endregion
 
-//#region slice
-let tab2 = [1,2,3,4,5,6];
-console.log("Affichage de mon tab slice")
-console.log(tab.slice(1,4))
+//#region function anonmyes
+// let myfunction = function(){
+//     return 5+5
+// }
+// console.log(myfunction())
+
+// let myfunction = function(number1, number2){
+//     return number1 + number2
+// }
+// let nb1 = 6
+// let nb2 = 8
+// console.log(myfunction(nb1, nb2))
+
 
 //#endregion
 
-//#region concat
 
-let tabTempo = [1]
-let tabTempo2=[2]
-let tabFinal = tabTempo.concat(tabTempo2)
-
-console.log(tabFinal)
-console.log(tabTempo.concat(tabTempo2))
-//#endregion
-
-//#region sort
-let tabNumber = [5,7,2,9,3,4]
-let tabString = ["Pizza","Burger","Nouille"]
-
-tabString.sort()
-console.log(tabString)
-
-console.log(tabNumber.sort(function(a,b){return a-b}))
-
-console.log(tabNumber.sort(function(a,b){return b-a}))
+//#region function isole code
+// (function(){
+//     console.log("Bonjour this is the test of cuntion anonyme...")
+// }())
 
 //#endregion
+
+//#region function flechees
+
+// let myParameter = 20
+// let functionMultiplication = myParameter => myParameter*5
+
+// console.log(functionMultiplication(20))
+
+
+//#endregion
+
+
+
+
+
 
 
