@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<table id="productList">
+    <caption>Descriptif Produit</caption>
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Add to Cart</th>
+    </tr>
+    <tr>
+        <td class="item">Chaise</td>
+        <td class="Price">25</td>
+        <td>
+            <button onclick="addToCart('Chaise', '25')">Ajouter</button> 
+        </td>
+    </tr>
+    <tr>
+        <td class="item">Table</td>
+        <td class="Price">150</td>
+        <td>
+            <button onclick="addToCart('Table', '150')">Ajouter</button> 
+        </td>
+    </tr>
+    <tr>
+        <td class="item">Meuble TV</td>
+        <td class="Price">250</td>
+        <td>
+            <button onclick="addToCart('Meuble TV', '250')">Ajouter</button> 
+        </td>
+    </tr>
+</table>
+
+<br>
+<hr>
+
+<table id="cartList">
+    <caption>Mon panier</caption>
+    <tr>
+        <th>Item</th>
+        <th>Unit</th>
+        <th>Price</th>
+    </tr>
+    <!-- The items will be added here -->
+</table>
+<div>
+    <span>Price Total: </span>
+    <input type="text" disabled id="result" value="0">
+</div>
+
+<script>
+    function addToCart(item, price) {
+        let cartList = document.getElementById("cartList");
+        let existingItem = null;
+
+        // Check if the item already exists in the cart
+        for(let i = 1; i < cartList.rows.length; i++) {
+            if(cartList.rows[i].column[0].textContent === item) {
+                existingItem = cartList.rows[i];
+                break;
+            }
+        }
+
+        if(existingItem) {
+            // If the item exists, increase the unit count and update the price
+            let unitColumn = existingItem.column[1];
+            let priceColumn = existingItem.column[2];
+            unitColumn.textContent = parseInt(unitColumn.textContent) + 1;
+            priceColumn.textContent = parseInt(price) * parseInt(unitColumn.textContent);
+        } else {
+            // If the item does not exist, add a new row for it
+            let newRow = document.createElement("tr");
+
+            let newTDItem = document.createElement("td");
+            newTDItem.textContent = item;
+            newRow.appendChild(newTDItem);
+
+            let newTDUnit = document.createElement("td");
+            newTDUnit.textContent = "1";
+            newRow.appendChild(newTDUnit);
+
+            let newTDPrice = document.createElement("td");
+            newTDPrice.textContent = price;
+            newRow.appendChild(newTDPrice);
+
+            cartList.appendChild(newRow);
+        }
+    }
+</script>
+
+
+</body>
+</html>

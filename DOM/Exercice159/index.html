@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+<table id="productList">
+    <caption>Descriptif Produit</caption>
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Add to Cart</th>
+    </tr>
+    <tr>
+        <td class="item">Chaise</td>
+        <td class="price">25</td>
+        <td>
+            <button onclick="addToCart('Chaise','25')">Ajouter</button> 
+        </td>
+    </tr>
+    <tr>
+        <td class="item">Table</td>
+        <td class="price">150</td>
+        <td>
+            <button onclick="addToCart('Table','150')">Ajouter</button> 
+        </td>
+    </tr>
+    <tr>
+        <td class="item">Meuble TV</td>
+        <td class="price">250</td>
+        <td>
+            <button onclick="addToCart('Meuble TV','250')">Ajouter</button> 
+        </td>
+    </tr>
+</table>
+<br>
+<br>
+<hr>
+<br>
+
+<table id="cartList">
+    <caption>Mon panier</caption>
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+    </tr>
+
+</table>
+<div>
+    <span style="font-weight: 900;">Price Total: </span>
+    <input type="text" id="totalPrice" value="0" readonly>
+
+</div>
+
+
+
+</body>
+</html>
