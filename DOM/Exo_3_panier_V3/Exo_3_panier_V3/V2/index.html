@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <fieldset>
+            <legend><h1>Descriptif produit</h1></legend>
+            <div id="produit1">
+                <span>Chaise</span>
+                <span>25</span>
+                <span><button onclick="ajoutProduit('1')">Ajouter</button></span>
+            </div>
+            <div id="produit2">
+                <span>Table</span>
+                <span>150</span>
+                <span><button onclick="ajoutProduit('2')">Ajouter</button></span>
+            </div>
+            <div id="produit3">
+                <span>Meuble Tv</span>
+                <span>250</span>
+                <span><button onclick="ajoutProduit('3')">Ajouter</button></span>
+            </div>
+        </fieldset>
+    </section>
+    
+
+    <fieldset>
+        <legend><h1>Mon panier</h1></legend>
+
+        <div id="liste">
+        </div>
+
+        <div>
+            <span>Total : </span>
+            <input type="text" disabled id="result">
+        </div>
+    </fieldset>
+
+</body>
+</html>
