@@ -59,6 +59,24 @@ const personHandler = function (data) {
   }
 };
 
-getData(`https://randomuser.me/api/?nat=fr&results=5`, personHandler, { method: "GET", body: null, async: true });
+// getData(`https://randomuser.me/api/?nat=fr&results=5`, personHandler, { method: "GET", body: null, async: true });
 
 //if not defined options here, it will take the default options defined in the function
+
+fetch(`https://randomuser.me/api/?nat=fr&results=5`).then(async (response) => personHandler(await response.json()));
+
+// let reponse = await fetch(`https://randomuser.me/api/?nat=fr&results=5`);
+// let json = await reponse.json();
+// personHandler(json);
+
+// const functionSynchrone = function () {
+//   return "toto";
+// };
+
+// const functionAsynchrone = async function () {
+//   return "toto";
+// };
+
+// let syncValue = functionSynchrone();
+
+// let asyncValue = await functionAsynchrone();
